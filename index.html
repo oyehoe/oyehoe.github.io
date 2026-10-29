@@ -1,91 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HU Store - Premium T-Shirts</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background: #f8f9fa; padding: 20px; color: #212529; }
-    
-    header { text-align: center; margin-bottom: 25px; padding: 20px 10px; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    header h1 { font-size: 2.2rem; color: #111; letter-spacing: 1px; }
-    header p { color: #6c757d; font-size: 0.95rem; margin-top: 5px; }
-
-    .payment-box { background: #e8f5e9; border: 1px solid #c8e6c9; color: #2e7d32; padding: 15px; border-radius: 10px; text-align: center; margin: 0 auto 25px; max-width: 1100px; }
-    .payment-box h3 { font-size: 1.1rem; margin-bottom: 5px; }
-    .payment-box p { font-size: 0.95rem; line-height: 1.5; }
-
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
-    .card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); padding: 15px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #eee; }
-    .card img { width: 100%; height: 260px; object-fit: cover; border-radius: 8px; }
-    .card h3 { font-size: 1.1rem; margin: 12px 0 6px; color: #111; }
-    .price { font-weight: bold; color: #2e7d32; font-size: 1.2rem; margin-bottom: 12px; }
-    
-    label { font-size: 0.85rem; font-weight: 600; color: #495057; display: block; margin-bottom: 5px; }
-    select { width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 6px; margin-bottom: 15px; font-size: 0.9rem; outline: none; background: #fff; }
-
-    .buy-btn { background: #25D366; color: #fff; text-decoration: none; text-align: center; padding: 12px; border-radius: 8px; font-weight: bold; display: block; transition: 0.3s; font-size: 1rem; border: none; cursor: pointer; }
-    .buy-btn:hover { background: #1eb954; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OYEHOE! - Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .payment-box {
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 300px;
+            padding: 15px;
+            text-align: left;
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0 5px 0;
+        }
+        .price {
+            color: #2e7d32;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .description {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .product-card label {
+            font-size: 12px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .product-card select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .buy-btn {
+            display: block;
+            background-color: #25d366;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .buy-btn:hover {
+            background-color: #1ebe5d;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>HU STORE</h1>
-    <p>Exclusive Streetwear & T-Shirts Collection</p>
-  </header>
+    <!-- Advance Payment Details Section -->
+    <div class="payment-box">
+        <h3>💳 Advance Payment Details</h3>
+        <p><b>EasyPaisa Account:</b> 03335499789</p>
+        <p><b>Account Title:</b> Noreen BEGUM</p>
+        <p style="font-size: 12px;">Order confirm karne ke liye advance payment ki receipt WhatsApp par send karein.</p>
+    </div>
 
-  <div class="payment-box">
-    <h3>💳 Advance Payment Details</h3>
-    <p><strong>EasyPaisa Account:</strong> 03335499789<br>
-    <strong>Account Title:</strong> Noreen BEGUM<br>
-    <small>Order confirm karne ke liye advance payment ki receipt WhatsApp par send karein.</small></p>
-  </div>
+    <h1>OYEHOE! Store Catalog</h1>
 
-  <div class="grid" id="productGrid"></div>
+    <div class="products-container">
 
-  <script>
-    // Updated WhatsApp Number
-    const whatsappNum = "923485590676"; 
-
-    // 12 T-Shirts Collection
-    const products = Array.from({ length: 12 }, (_, i) => ({
-      id: i + 1,
-      title: `HU Premium T-Shirt #${i + 1}`,
-      price: "Rs. 1,499",
-      img: `https://via.placeholder.com/300x350/111111/ffffff?text=HU+T-Shirt+${i + 1}`
-    }));
-
-    const container = document.getElementById('productGrid');
-
-    products.forEach(p => {
-      container.innerHTML += `
-        <div class="card">
-          <img src="${p.img}" alt="${p.title}">
-          <h3>${p.title}</h3>
-          <div class="price">${p.price}</div>
-          
-          <label>Select Size:</label>
-          <select id="size-${p.id}">
-            <option value="S">Small (S)</option>
-            <option value="M" selected>Medium (M)</option>
-            <option value="L">Large (L)</option>
-            <option value="XL">Extra Large (XL)</option>
-          </select>
-
-          <button class="buy-btn" onclick="orderNow('${p.title}', '${p.price}', ${p.id})">Buy Now (WhatsApp)</button>
+        <!-- Product 1: Toyota Supra MK4 T-Shirt -->
+        <div class="product-card">
+            <img src="supra-tshirt.png" alt="HU Toyota Supra MK4 T-Shirt">
+            <h3>HU Toyota Supra MK4 Premium T-Shirt</h3>
+            <p class="price">Rs. 1,499</p>
+            <p class="description"><b>Material:</b> 100% Pure Cotton.<br>Featuring the legendary JDM Toyota Supra MK4 design. Soft, breathable, and perfect casual wear for car enthusiasts.</p>
+            <label>Select Size:</label>
+            <select>
+                <option>Medium (M)</option>
+                <option>Large (L)</option>
+                <option>Extra Large (XL)</option>
+            </select>
+            <a href="https://wa.me/923335499789?text=I%20want%20to%20order%20HU%20Toyota%20Supra%20MK4%20Premium%20T-Shirt" class="buy-btn">Buy Now (WhatsApp)</a>
         </div>
-      `;
-    });
 
-    function orderNow(title, price, id) {
-      const size = document.getElementById(`size-${id}`).value;
-      const msg = `Hello HU Store!\n\nI want to place an order:\n📌 *Product:* ${title}\n📏 *Size:* ${size}\n💰 *Price:* ${price}\n\n💳 *Payment Details:* I will send advance payment to EasyPaisa (Noreen BEGUM - 03335499789) and share the screenshot here.`;
-      
-      window.open(`https://wa.me/${whatsappNum}?text=${encodeURIComponent(msg)}`, '_blank');
-    }
-  </script>
+        <!-- Product 2: BMW M4/Rear T-Shirt -->
+        <div class="product-card">
+            <img src="bmw-rear-tshirt.png" alt="HU BMW Rear Design T-Shirt">
+            <h3>HU BMW Motorsport Edition T-Shirt</h3>
+            <p class="price">Rs. 1,499</p>
+            <p class="description"><b>Material:</b> 100% Pure Cotton.<br>Sleek rear-end design print with BMW branding. Premium fabric quality built for everyday comfort.</p>
+            <label>Select Size:</label>
+            <select>
+                <option>Medium (M)</option>
+                <option>Large (L)</option>
+                <option>Extra Large (XL)</option>
+            </select>
+            <a href="https://wa.me/923335499789?text=I%20want%20to%20order%20HU%20BMW%20Motorsport%20Edition%20T-Shirt" class="buy-btn">Buy Now (WhatsApp)</a>
+        </div>
+
+        <!-- Product 3: BMW M4 GT3 T-Shirt -->
+        <div class="product-card">
+            <img src="bmw-gt3-tshirt.png" alt="HU BMW M4 GT3 T-Shirt">
+            <h3>HU BMW M4 GT3 Track T-Shirt</h3>
+            <p class="price">Rs. 1,499</p>
+            <p class="description"><b>Material:</b> 100% Pure Cotton.<br>Built for the track and engineered for victory. High-definition graphics representing pure German performance.</p>
+            <label>Select Size:</label>
+            <select>
+                <option>Medium (M)</option>
+                <option>Large (L)</option>
+                <option>Extra Large (XL)</option>
+            </select>
+            <a href="https://wa.me/923335499789?text=I%20want%20to%20order%20HU%20BMW%20M4%20GT3%20Track%20T-Shirt" class="buy-btn">Buy Now (WhatsApp)</a>
+        </div>
+
+        <!-- Product 4: Lamborghini Huracan Hoodie -->
+        <div class="product-card">
+            <img src="lambo-hoodie.png" alt="HU Lamborghini Huracan Yellow Hoodie">
+            <h3>HU Lamborghini Huracan Performance Hoodie</h3>
+            <p class="price">Rs. 2,999</p>
+            <p class="description"><b>Material:</b> High-Quality Polyester Fleece.<br>Vibrant yellow winter wear featuring the aggressive Lamborghini Huracan silhouette. Warm and stylish.</p>
+            <label>Select Size:</label>
+            <select>
+                <option>Medium (M)</option>
+                <option>Large (L)</option>
+                <option>Extra Large (XL)</option>
+            </select>
+            <a href="https://wa.me/923335499789?text=I%20want%20to%20order%20HU%20Lamborghini%20Huracan%20Performance%20Hoodie" class="buy-btn">Buy Now (WhatsApp)</a>
+        </div>
+
+        <!-- Product 5: Need for Speed White Hoodie -->
+        <div class="product-card">
+            <img src="nfs-hoodie.png" alt="HU Need for Speed Most Wanted Hoodie">
+            <h3>HU Need for Speed Most Wanted Hoodie</h3>
+            <p class="price">Rs. 2,999</p>
+            <p class="description"><b>Material:</b> High-Quality Polyester Fleece.<br>Featuring the iconic Most Wanted BMW M3 GTR artwork. Cozy fleece lining to keep you warm during winter meets.</p>
+            <label>Select Size:</label>
+            <select>
+                <option>Medium (M)</option>
+                <option>Large (L)</option>
+                <option>Extra Large (XL)</option>
+            </select>
+            <a href="https://wa.me/923335499789?text=I%20want%20to%20order%20HU%20Need%20for%20Speed%20Most%20Wanted%20Hoodie" class="buy-btn">Buy Now (WhatsApp)</a>
+        </div>
+
+    </div>
 
 </body>
 </html>
