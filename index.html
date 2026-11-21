@@ -1,252 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HU Store - Premium T-Shirts</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background: #f8f9fa; padding: 20px; color: #212529; }
-    
-    header { text-align: center; margin-bottom: 25px; padding: 20px 10px; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    header h1 { font-size: 2.2rem; color: #111; letter-spacing: 1px; }
-    header p { color: #6c757d; font-size: 0.95rem; margin-top: 5px; }
-
-    .payment-box { background: #e8f5e9; border: 1px solid #c8e6c9; color: #2e7d32; padding: 15px; border-radius: 10px; text-align: center; margin: 0 auto 25px; max-width: 1100px; }
-    .payment-box h3 { font-size: 1.1rem; margin-bottom: 5px; }
-    .payment-box p { font-size: 0.95rem; line-height: 1.5; }
-
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
-    .card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); padding: 15px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #eee; }
-    .card img { width: 100%; height: 260px; object-fit: cover; border-radius: 8px; }
-    .card h3 { font-size: 1.1rem; margin: 12px 0 6px; color: #111; }
-    .price { font-weight: bold; color: #2e7d32; font-size: 1.2rem; margin-bottom: 12px; }
-    
-    label { font-size: 0.85rem; font-weight: 600; color: #495057; display: block; margin-bottom: 5px; }
-    select { width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 6px; margin-bottom: 15px; font-size: 0.9rem; outline: none; background: #fff; }
-
-    .buy-btn { background: #25D366; color: #fff; text-decoration: none; text-align: center; padding: 12px; border-radius: 8px; font-weight: bold; display: block; transition: 0.3s; font-size: 1rem; border: none; cursor: pointer; }
-    .buy-btn:hover { background: #1eb954; }
-  </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OYEHOE! - Store</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-        .payment-box {
-            background-color: #e8f5e9;
-            border: 1px solid #c8e6c9;
-            padding: 15px;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .products-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .product-card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            width: 300px;
-            padding: 15px;
-            text-align: left;
-        }
-        .product-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        .product-card h3 {
-            font-size: 18px;
-            margin: 10px 0 5px 0;
-        }
-        .price {
-            color: #2e7d32;
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-        .description {
-            font-size: 13px;
-            color: #555;
-            margin-bottom: 15px;
-        }
-        .product-card label {
-            font-size: 12px;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-        }
-        .product-card select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-        .buy-btn {
-            display: block;
-            background-color: #25d366;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .buy-btn:hover {
-            background-color: #1ebe5d;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OYEHOE — Premium Car Culture Apparel</title>
+<meta name="description" content="OYEHOE.STORE — premium car-culture hoodies & t-shirts. Cash on delivery with 40% advance.">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0b;--card:#131316;--line:#25252b;--gold:#d4af6a;--gold2:#f3dca3;--tx:#f2f2f2;--mu:#9a9aa3}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:Inter,system-ui,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}
+.brand{font-family:Orbitron,Impact,sans-serif;font-weight:900;letter-spacing:.28em;background:linear-gradient(90deg,#fff,var(--gold2) 45%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:rgba(10,10,11,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{width:44px;height:44px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px var(--gold)}
+.logo b{font-size:1.25rem}
+.logo small{display:block;font-size:.55rem;letter-spacing:.35em;color:var(--mu);-webkit-text-fill-color:var(--mu)}
+nav{display:flex;gap:22px;align-items:center;font-size:.85rem;color:var(--mu)}
+nav a:hover{color:var(--gold)}
+.cartbtn{position:relative;border:1px solid var(--gold);color:var(--gold);background:none;padding:8px 16px;border-radius:30px;cursor:pointer;font-weight:600}
+.cartbtn span{background:var(--gold);color:#000;border-radius:50%;padding:1px 7px;margin-left:6px;font-size:.75rem}
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(rgba(10,10,11,.55),var(--bg)),url(images/banner.jpg) center/cover}
+.hero h1{font-size:clamp(3rem,13vw,8rem);line-height:1}
+.hero p{color:#ddd;margin:18px auto 28px;max-width:520px;padding:0 20px}
+.tag{font-size:.7rem;letter-spacing:.5em;color:var(--gold);margin-bottom:14px}
+.btn{display:inline-block;background:linear-gradient(90deg,var(--gold),var(--gold2));color:#111;padding:14px 34px;border-radius:40px;font-weight:700;border:0;cursor:pointer;font-size:.95rem}
+.btn:hover{filter:brightness(1.1)}
+.perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border-block:1px solid var(--line)}
+.perks div{background:var(--bg);padding:22px;text-align:center;font-size:.85rem;color:var(--mu)}
+.perks b{display:block;color:var(--gold);margin-bottom:2px;font-size:.95rem}
+section{padding:70px 5%}
+h2{font-family:Orbitron,sans-serif;text-align:center;font-size:clamp(1.4rem,4vw,2.2rem);letter-spacing:.15em;margin-bottom:8px}
+.sub{text-align:center;color:var(--mu);margin-bottom:40px;font-size:.9rem}
+.tabs{display:flex;justify-content:center;gap:10px;margin-bottom:34px}
+.tabs button{background:none;border:1px solid var(--line);color:var(--mu);padding:9px 22px;border-radius:30px;cursor:pointer}
+.tabs button.on{border-color:var(--gold);color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:26px;max-width:1250px;margin:auto}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 18px 40px rgba(212,175,106,.1)}
+.card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#000}
+.info{padding:18px}
+.info h3{font-size:1rem;margin-bottom:2px}
+.info .cat{font-size:.7rem;letter-spacing:.2em;color:var(--mu);text-transform:uppercase}
+.price{color:var(--gold);font-weight:700;font-size:1.15rem;margin:8px 0 12px}
+.sizes{display:flex;gap:8px;margin-bottom:14px}
+.sizes button{flex:1;padding:8px 0;background:none;border:1px solid var(--line);color:var(--tx);border-radius:8px;cursor:pointer;font-weight:600}
+.sizes button.on{background:var(--gold);color:#000;border-color:var(--gold)}
+.card .btn{width:100%;padding:12px}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1000px;margin:auto}
+.how div{border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center;background:var(--card)}
+.how i{font-style:normal;font-family:Orbitron;color:var(--gold);font-size:1.6rem}
+.how p{color:var(--mu);font-size:.85rem;margin-top:6px}
+footer{border-top:1px solid var(--line);text-align:center;padding:40px 5% 90px;color:var(--mu);font-size:.85rem}
+footer .brand{font-size:1.4rem;display:block;margin-bottom:8px}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:1.7rem;box-shadow:0 6px 20px rgba(0,0,0,.5)}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;z-index:70}
+.ov.on{display:block}
+.drawer{position:fixed;top:0;right:-440px;width:min(420px,100%);height:100%;background:#101013;z-index:80;transition:.35s;display:flex;flex-direction:column;border-left:1px solid var(--line)}
+.drawer.on{right:0}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.dh button{background:none;border:0;color:var(--tx);font-size:1.5rem;cursor:pointer}
+.items{flex:1;overflow:auto;padding:14px 20px}
+.it{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center}
+.it img{width:60px;height:75px;object-fit:cover;border-radius:8px}
+.it div{flex:1;font-size:.85rem}
+.it small{color:var(--mu)}
+.it button{background:none;border:0;color:#e55;cursor:pointer;font-size:1.1rem}
+.sum{padding:18px 20px;border-top:1px solid var(--line);font-size:.9rem}
+.sum p{display:flex;justify-content:space-between;margin-bottom:6px;color:var(--mu)}
+.sum p.t{color:var(--tx);font-weight:700;font-size:1.05rem}
+.sum p.a{color:var(--gold);font-weight:600}
+.sum input{width:100%;padding:11px;margin:5px 0;background:#18181c;border:1px solid var(--line);border-radius:8px;color:var(--tx)}
+.sum .btn{width:100%;margin-top:10px;background:#25d366;color:#fff}
+.empty{text-align:center;color:var(--mu);padding:50px 0}
+</style>
 </head>
 <body>
+<header>
+  <a href="#top" class="logo"><img src="images/logo.png" alt="OYEHOE logo"><b class="brand">OYEHOE<small>.STORE</small></b></a>
+  <nav><a href="#shop">Shop</a><a href="#how">How to Order</a><a href="#contact">Contact</a>
+  <button class="cartbtn" onclick="openCart()">Cart<span id="cnt">0</span></button></nav>
+</header>
 
-  <header>
-    <h1>HU STORE</h1>
-    <p>Exclusive Streetwear & T-Shirts Collection</p>
-  </header>
-    <!-- Advance Payment Details Section -->
-    <div class="payment-box">
-        <h3>💳 Advance Payment Details</h3>
-        <p><b>EasyPaisa Account:</b> 03335499789</p>
-        <p><b>Account Title:</b> Noreen BEGUM</p>
-        <p style="font-size: 12px;">Order confirm karne ke liye advance payment ki receipt WhatsApp par send karein.</p>
-    </div>
-
-  <div class="payment-box">
-    <h3>💳 Advance Payment Details</h3>
-    <p><strong>EasyPaisa Account:</strong> 03335499789<br>
-    <strong>Account Title:</strong> Noreen BEGUM<br>
-    <small>Order confirm karne ke liye advance payment ki receipt WhatsApp par send karein.</small></p>
+<div class="hero" id="top">
+  <div>
+    <div class="tag">CAR CULTURE · PREMIUM APPAREL</div>
+    <h1 class="brand">OYEHOE</h1>
+    <p>Wear the machines you love. Premium hoodies &amp; tees inspired by legendary cars.</p>
+    <a href="#shop" class="btn">Shop Collection</a>
   </div>
-    <h1>OYEHOE! Store Catalog</h1>
-
-  <div class="grid" id="productGrid"></div>
-    <div class="products-container">
-
-  <script>
-    // Updated WhatsApp Number
-    const whatsappNum = "923485590676"; 
-        <!-- Product 1: Toyota Supra MK4 T-Shirt -->
-        <div class="product-card">
-            <img src="supra-tshirt.png" alt="HU Toyota Supra MK4 T-Shirt">
-            <h3>HU Toyota Supra MK4 Premium T-Shirt</h3>
-            <p class="price">Rs. 1,499</p>
-            <p class="description"><b>Material:</b> 100% Pure Cotton.<br>Featuring the legendary JDM Toyota Supra MK4 design. Soft, breathable, and perfect casual wear for car enthusiasts.</p>
-            <label>Select Size:</label>
-            <select>
-                <option>Medium (M)</option>
-                <option>Large (L)</option>
-                <option>Extra Large (XL)</option>
-            </select>
-            <a href="https://wa.me/923335499789?text=I%20want%20to%20order%20HU%20Toyota%20Supra%20MK4%20Premium%20T-Shirt" class="buy-btn">Buy Now (WhatsApp)</a>
-        </div>
-
-    // 12 T-Shirts Collection
-    const products = Array.from({ length: 12 }, (_, i) => ({
-      id: i + 1,
-      title: `HU Premium T-Shirt #${i + 1}`,
-      price: "Rs. 1,499",
-      img: `https://via.placeholder.com/300x350/111111/ffffff?text=HU+T-Shirt+${i + 1}`
-    }));
-        <!-- Product 2: BMW M4/Rear T-Shirt -->
-        <div class="product-card">
-            <img src="bmw-rear-tshirt.png" alt="HU BMW Rear Design T-Shirt">
-            <h3>HU BMW Motorsport Edition T-Shirt</h3>
-            <p class="price">Rs. 1,499</p>
-            <p class="description"><b>Material:</b> 100% Pure Cotton.<br>Sleek rear-end design print with BMW branding. Premium fabric quality built for everyday comfort.</p>
-            <label>Select Size:</label>
-            <select>
-                <option>Medium (M)</option>
-                <option>Large (L)</option>
-                <option>Extra Large (XL)</option>
-            </select>
-            <a href="https://wa.me/923335499789?text=I%20want%20to%20order%20HU%20BMW%20Motorsport%20Edition%20T-Shirt" class="buy-btn">Buy Now (WhatsApp)</a>
-        </div>
-
-    const container = document.getElementById('productGrid');
-        <!-- Product 3: BMW M4 GT3 T-Shirt -->
-        <div class="product-card">
-            <img src="bmw-gt3-tshirt.png" alt="HU BMW M4 GT3 T-Shirt">
-            <h3>HU BMW M4 GT3 Track T-Shirt</h3>
-            <p class="price">Rs. 1,499</p>
-            <p class="description"><b>Material:</b> 100% Pure Cotton.<br>Built for the track and engineered for victory. High-definition graphics representing pure German performance.</p>
-            <label>Select Size:</label>
-            <select>
-                <option>Medium (M)</option>
-                <option>Large (L)</option>
-                <option>Extra Large (XL)</option>
-            </select>
-            <a href="https://wa.me/923335499789?text=I%20want%20to%20order%20HU%20BMW%20M4%20GT3%20Track%20T-Shirt" class="buy-btn">Buy Now (WhatsApp)</a>
-        </div>
-
-    products.forEach(p => {
-      container.innerHTML += `
-        <div class="card">
-          <img src="${p.img}" alt="${p.title}">
-          <h3>${p.title}</h3>
-          <div class="price">${p.price}</div>
-          
-          <label>Select Size:</label>
-          <select id="size-${p.id}">
-            <option value="S">Small (S)</option>
-            <option value="M" selected>Medium (M)</option>
-            <option value="L">Large (L)</option>
-            <option value="XL">Extra Large (XL)</option>
-          </select>
-        <!-- Product 4: Lamborghini Huracan Hoodie -->
-        <div class="product-card">
-            <img src="lambo-hoodie.png" alt="HU Lamborghini Huracan Yellow Hoodie">
-            <h3>HU Lamborghini Huracan Performance Hoodie</h3>
-            <p class="price">Rs. 2,999</p>
-            <p class="description"><b>Material:</b> High-Quality Polyester Fleece.<br>Vibrant yellow winter wear featuring the aggressive Lamborghini Huracan silhouette. Warm and stylish.</p>
-            <label>Select Size:</label>
-            <select>
-                <option>Medium (M)</option>
-                <option>Large (L)</option>
-                <option>Extra Large (XL)</option>
-            </select>
-            <a href="https://wa.me/923335499789?text=I%20want%20to%20order%20HU%20Lamborghini%20Huracan%20Performance%20Hoodie" class="buy-btn">Buy Now (WhatsApp)</a>
-        </div>
-
-          <button class="buy-btn" onclick="orderNow('${p.title}', '${p.price}', ${p.id})">Buy Now (WhatsApp)</button>
-        <!-- Product 5: Need for Speed White Hoodie -->
-        <div class="product-card">
-            <img src="nfs-hoodie.png" alt="HU Need for Speed Most Wanted Hoodie">
-            <h3>HU Need for Speed Most Wanted Hoodie</h3>
-            <p class="price">Rs. 2,999</p>
-            <p class="description"><b>Material:</b> High-Quality Polyester Fleece.<br>Featuring the iconic Most Wanted BMW M3 GTR artwork. Cozy fleece lining to keep you warm during winter meets.</p>
-            <label>Select Size:</label>
-            <select>
-                <option>Medium (M)</option>
-                <option>Large (L)</option>
-                <option>Extra Large (XL)</option>
-            </select>
-            <a href="https://wa.me/923335499789?text=I%20want%20to%20order%20HU%20Need%20for%20Speed%20Most%20Wanted%20Hoodie" class="buy-btn">Buy Now (WhatsApp)</a>
 </div>
-      `;
-    });
 
-    function orderNow(title, price, id) {
-      const size = document.getElementById(`size-${id}`).value;
-      const msg = `Hello HU Store!\n\nI want to place an order:\n📌 *Product:* ${title}\n📏 *Size:* ${size}\n💰 *Price:* ${price}\n\n💳 *Payment Details:* I will send advance payment to EasyPaisa (Noreen BEGUM - 03335499789) and share the screenshot here.`;
-      
-      window.open(`https://wa.me/${whatsappNum}?text=${encodeURIComponent(msg)}`, '_blank');
-    }
-  </script>
-    </div>
+<div class="perks">
+  <div><b>Sizes</b>Medium · Large · XL</div>
+  <div><b>40% Advance</b>Confirm your order securely</div>
+  <div><b>Premium Quality</b>Heavy fabric, sharp prints</div>
+  <div><b>WhatsApp Support</b>03485590676</div>
+</div>
 
+<section id="shop">
+  <h2>THE COLLECTION</h2>
+  <p class="sub">Hoodies Rs. 2,650 &nbsp;·&nbsp; T-Shirts Rs. 1,750</p>
+  <div class="tabs">
+    <button class="on" data-f="all">All</button><button data-f="Hoodie">Hoodies</button><button data-f="T-Shirt">T-Shirts</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="how">
+  <h2>HOW TO ORDER</h2>
+  <p class="sub">Simple, fast, via WhatsApp</p>
+  <div class="how">
+    <div><i>01</i><p>Choose your design and size, add to cart.</p></div>
+    <div><i>02</i><p>Enter name, phone &amp; address and tap “Order on WhatsApp”.</p></div>
+    <div><i>03</i><p>Send 40% advance to confirm. Pay the rest on delivery.</p></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <span class="brand">OYEHOE.STORE</span>
+  WhatsApp: <a href="https://wa.me/923485590676" style="color:var(--gold)">0348 5590676</a><br>
+  © 2026 OYEHOE.STORE — All rights reserved.
+</footer>
+
+<a class="wa" href="https://wa.me/923485590676?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20order%20from%20OYEHOE" aria-label="WhatsApp">&#128172;</a>
+
+<div class="ov" id="ov" onclick="closeCart()"></div>
+<aside class="drawer" id="drawer">
+  <div class="dh"><b class="brand" style="letter-spacing:.2em">YOUR CART</b><button onclick="closeCart()">&times;</button></div>
+  <div class="items" id="items"></div>
+  <div class="sum" id="sum">
+    <p><span>Total</span><span id="tot">Rs. 0</span></p>
+    <p class="a"><span>Advance (40%)</span><span id="adv">Rs. 0</span></p>
+    <p><span>Pay on delivery</span><span id="rem">Rs. 0</span></p>
+    <input id="nm" placeholder="Full name"><input id="ph" placeholder="Phone number"><input id="ad" placeholder="Full address & city">
+    <button class="btn" onclick="checkout()">Order on WhatsApp</button>
+  </div>
+</aside>
+
+<script>
+const WA="923485590676", ADV=0.4, SIZES=["Medium","Large","XL"];
+const P=[
+ {id:1,n:"Lamborghini Huracán — Yellow",t:"Hoodie",p:2650,i:"huracan-yellow.jpg"},
+ {id:2,n:"Lamborghini Huracán — Black",t:"Hoodie",p:2650,i:"huracan-black.jpg"},
+ {id:3,n:"BMW M3 GTR — Most Wanted",t:"T-Shirt",p:1750,i:"nfs-m3-gtr.jpg"},
+ {id:4,n:"BMW M4 GT3",t:"T-Shirt",p:1750,i:"bmw-m4-gt3.jpg"},
+ {id:5,n:"Honda Civic 1996",t:"T-Shirt",p:1750,i:"civic-1996.jpg"}
+];
+const sel={}; let cart=[]; try{cart=JSON.parse(localStorage.getItem("oh")||"[]")}catch(e){}
+const fmt=n=>"Rs. "+n.toLocaleString("en-PK");
+function render(f="all"){
+ grid.innerHTML=P.filter(x=>f=="all"||x.t==f).map(x=>`<div class="card"><img src="images/${x.i}" alt="${x.n}" loading="lazy">
+ <div class="info"><div class="cat">${x.t}</div><h3>${x.n}</h3><div class="price">${fmt(x.p)}</div>
+ <div class="sizes">${SIZES.map(s=>`<button class="${sel[x.id]==s?'on':''}" onclick="pick(${x.id},'${s}')">${s=="Medium"?"M":s=="Large"?"L":"XL"}</button>`).join("")}</div>
+ <button class="btn" onclick="add(${x.id})">Add to Cart</button></div></div>`).join("");
+}
+let cur="all";
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tabs button").forEach(c=>c.classList.remove("on"));b.classList.add("on");cur=b.dataset.f;render(cur)});
+function pick(id,s){sel[id]=s;render(cur)}
+function add(id){
+ if(!sel[id]){alert("Please select a size first (M / L / XL)");return}
+ const x=P.find(p=>p.id==id), k=cart.find(c=>c.id==id&&c.s==sel[id]);
+ k?k.q++:cart.push({id,s:sel[id],q:1}); save(); openCart();
+}
+function save(){try{localStorage.setItem("oh",JSON.stringify(cart))}catch(e){} drawCart()}
+function drawCart(){
+ cnt.textContent=cart.reduce((a,c)=>a+c.q,0);
+ items.innerHTML=cart.length?cart.map((c,j)=>{const x=P.find(p=>p.id==c.id);return `<div class="it"><img src="images/${x.i}" alt=""><div><b>${x.n}</b><br><small>Size: ${c.s} · Qty: ${c.q}</small><br>${fmt(x.p*c.q)}</div><button onclick="rm(${j})">&#10005;</button></div>`}).join(""):'<div class="empty">Your cart is empty</div>';
+ const t=total(); tot.textContent=fmt(t); adv.textContent=fmt(Math.round(t*ADV)); rem.textContent=fmt(t-Math.round(t*ADV));
+}
+const total=()=>cart.reduce((a,c)=>a+P.find(p=>p.id==c.id).p*c.q,0);
+function rm(j){cart.splice(j,1);save()}
+function openCart(){drawer.classList.add("on");ov.classList.add("on");drawCart()}
+function closeCart(){drawer.classList.remove("on");ov.classList.remove("on")}
+function checkout(){
+ if(!cart.length)return alert("Cart is empty");
+ if(!nm.value.trim()||!ph.value.trim()||!ad.value.trim())return alert("Please enter name, phone and address");
+ const t=total(),a=Math.round(t*ADV);
+ const lines=cart.map(c=>{const x=P.find(p=>p.id==c.id);return `• ${x.n} (${x.t}) — Size ${c.s} × ${c.q} = ${fmt(x.p*c.q)}`}).join("\n");
+ const m=`*New Order — OYEHOE.STORE*\n\n${lines}\n\n*Total:* ${fmt(t)}\n*Advance (40%):* ${fmt(a)}\n*Remaining on delivery:* ${fmt(t-a)}\n\n*Name:* ${nm.value}\n*Phone:* ${ph.value}\n*Address:* ${ad.value}`;
+ window.open(`https://wa.me/${WA}?text=${encodeURIComponent(m)}`,"_blank");
+}
+render(); drawCart();
+</script>
 </body>
 </html>
