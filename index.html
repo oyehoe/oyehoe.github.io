@@ -40,12 +40,14 @@ h2{font-family:Orbitron,sans-serif;text-align:center;font-size:clamp(1.4rem,4vw,
 .tabs button{background:none;border:1px solid var(--line);color:var(--mu);padding:9px 22px;border-radius:30px;cursor:pointer}
 .tabs button.on{border-color:var(--gold);color:var(--gold)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:26px;max-width:1250px;margin:auto}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.3s}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.3s}
 .card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 18px 40px rgba(212,175,106,.1)}
 .card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:#000}
+.badge{position:absolute;top:12px;left:12px;z-index:2;background:rgba(0,0,0,.78);border:1px solid var(--gold);color:var(--gold2);font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:.03em}
 .info{padding:18px}
 .info h3{font-size:1rem;margin-bottom:2px}
 .info .cat{font-size:.7rem;letter-spacing:.2em;color:var(--mu);text-transform:uppercase}
+.desc{color:var(--mu);font-size:.8rem;margin-top:8px;line-height:1.55}
 .price{color:var(--gold);font-weight:700;font-size:1.15rem;margin:8px 0 12px}
 .sizes{display:flex;gap:8px;margin-bottom:14px}
 .sizes button{flex:1;padding:8px 0;background:none;border:1px solid var(--line);color:var(--tx);border-radius:8px;cursor:pointer;font-weight:600}
@@ -104,7 +106,7 @@ footer .brand{font-size:1.4rem;display:block;margin-bottom:8px}
 
 <section id="shop">
   <h2>THE COLLECTION</h2>
-  <p class="sub">Hoodies Rs. 2,650 &nbsp;·&nbsp; T-Shirts Rs. 1,750</p>
+  <p class="sub">Hoodies from Rs. 2,500 &nbsp;·&nbsp; T-Shirts Rs. 1,750</p>
   <div class="tabs">
     <button class="on" data-f="all">All</button><button data-f="Hoodie">Hoodies</button><button data-f="T-Shirt">T-Shirts</button>
   </div>
@@ -145,6 +147,7 @@ footer .brand{font-size:1.4rem;display:block;margin-bottom:8px}
 <script>
 const WA="923485590676", ADV=0.4, SIZES=["Medium","Large","XL"];
 const P=[
+ {id:6,n:"BMW M3 GTR Most Wanted — NFS Edition",t:"Hoodie",p:2500,i:"nfs-m3-hoodie.png",sold:32,d:"The legendary Need for Speed Most Wanted M3 GTR on a heavy, soft white hoodie. Sharp print, cozy fleece, made for car lovers. Sizes M / L / XL."},
  {id:1,n:"Lamborghini Huracán — Yellow",t:"Hoodie",p:2650,i:"huracan-yellow.jpg"},
  {id:2,n:"Lamborghini Huracán — Black",t:"Hoodie",p:2650,i:"huracan-black.jpg"},
  {id:3,n:"BMW M3 GTR — Most Wanted",t:"T-Shirt",p:1750,i:"nfs-m3-gtr.jpg"},
@@ -154,8 +157,8 @@ const P=[
 const sel={}; let cart=[]; try{cart=JSON.parse(localStorage.getItem("oh")||"[]")}catch(e){}
 const fmt=n=>"Rs. "+n.toLocaleString("en-PK");
 function render(f="all"){
- grid.innerHTML=P.filter(x=>f=="all"||x.t==f).map(x=>`<div class="card"><img src="images/${x.i}" alt="${x.n}" loading="lazy">
- <div class="info"><div class="cat">${x.t}</div><h3>${x.n}</h3><div class="price">${fmt(x.p)}</div>
+ grid.innerHTML=P.filter(x=>f=="all"||x.t==f).map(x=>`<div class="card">${x.sold?`<div class="badge">🔥 ${x.sold} Sold</div>`:""}<img src="images/${x.i}" alt="${x.n}" loading="lazy">
+ <div class="info"><div class="cat">${x.t}</div><h3>${x.n}</h3>${x.d?`<p class="desc">${x.d}</p>`:""}<div class="price">${fmt(x.p)}</div>
  <div class="sizes">${SIZES.map(s=>`<button class="${sel[x.id]==s?'on':''}" onclick="pick(${x.id},'${s}')">${s=="Medium"?"M":s=="Large"?"L":"XL"}</button>`).join("")}</div>
  <button class="btn" onclick="add(${x.id})">Add to Cart</button></div></div>`).join("");
 }
