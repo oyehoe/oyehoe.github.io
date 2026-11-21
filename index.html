@@ -48,6 +48,10 @@ h2{font-family:Orbitron,sans-serif;text-align:center;font-size:clamp(1.4rem,4vw,
 .info h3{font-size:1rem;margin-bottom:2px}
 .info .cat{font-size:.7rem;letter-spacing:.2em;color:var(--mu);text-transform:uppercase}
 .desc{color:var(--mu);font-size:.8rem;margin-top:8px;line-height:1.55}
+.rate{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:.8rem;color:var(--mu)}
+.rate b{color:var(--tx)}
+.stars{--v:4;display:inline-block;font-size:1rem;letter-spacing:2px;line-height:1}
+.stars::before{content:"★★★★★";background:linear-gradient(90deg,var(--gold) calc(var(--v)/5*100%),#3a3a42 0);-webkit-background-clip:text;background-clip:text;color:transparent}
 .price{color:var(--gold);font-weight:700;font-size:1.15rem;margin:8px 0 12px}
 .sizes{display:flex;gap:8px;margin-bottom:14px}
 .sizes button{flex:1;padding:8px 0;background:none;border:1px solid var(--line);color:var(--tx);border-radius:8px;cursor:pointer;font-weight:600}
@@ -147,18 +151,18 @@ footer .brand{font-size:1.4rem;display:block;margin-bottom:8px}
 <script>
 const WA="923485590676", ADV=0.4, SIZES=["Medium","Large","XL"];
 const P=[
- {id:6,n:"BMW M3 GTR Most Wanted — NFS Edition",t:"Hoodie",p:2500,i:"nfs-m3-hoodie.png",sold:32,d:"The legendary Need for Speed Most Wanted M3 GTR on a heavy, soft white hoodie. Sharp print, cozy fleece, made for car lovers. Sizes M / L / XL."},
- {id:1,n:"Lamborghini Huracán — Yellow",t:"Hoodie",p:2650,i:"huracan-yellow.jpg"},
- {id:2,n:"Lamborghini Huracán — Black",t:"Hoodie",p:2650,i:"huracan-black.jpg"},
- {id:3,n:"BMW M3 GTR — Most Wanted",t:"T-Shirt",p:1750,i:"nfs-m3-gtr.jpg"},
- {id:4,n:"BMW M4 GT3",t:"T-Shirt",p:1750,i:"bmw-m4-gt3.jpg"},
- {id:5,n:"Honda Civic 1996",t:"T-Shirt",p:1750,i:"civic-1996.jpg"}
+ {id:6,n:"BMW M3 GTR Most Wanted — NFS Edition",t:"Hoodie",p:2500,i:"nfs-m3-hoodie.png",sold:32,r:4.6,d:"The iconic blue-and-silver BMW M3 GTR from Need for Speed Most Wanted, printed in sharp full colour on a premium white hoodie. Thick, soft fleece inside, kangaroo pocket and ribbed cuffs for a relaxed street fit. A must-have for every NFS and BMW fan. Sizes M / L / XL."},
+ {id:1,n:"Lamborghini Huracán — Yellow",t:"Hoodie",p:2650,i:"huracan-yellow.jpg",d:"The Lamborghini Huracán in blazing yellow, front and centre on a heavyweight hoodie. Soft fleece lining, roomy hood and a bold, eye-catching print that turns heads at every meet. Made for supercar lovers who like to stand out. Sizes M / L / XL."},
+ {id:2,n:"Lamborghini Huracán — Black",t:"Hoodie",p:2650,i:"huracan-black.jpg",d:"Dark, sleek and aggressive: the Huracán on a thick black hoodie. Warm fleece inside, clean premium print outside. Perfect for late-night drives, garage meets and everyday street style. Sizes M / L / XL."},
+ {id:3,n:"BMW M3 GTR — Most Wanted",t:"T-Shirt",p:1750,i:"nfs-m3-gtr.jpg",d:"Relive the legend: the blue-and-silver M3 GTR from Need for Speed Most Wanted on a soft, breathable tee. Sharp print, comfortable everyday fit, easy to style with jeans or joggers. A must-have for every NFS fan. Sizes M / L / XL."},
+ {id:4,n:"BMW M4 GT3",t:"T-Shirt",p:1750,i:"bmw-m4-gt3.jpg",d:"The race-bred BMW M4 GT3 on a lightweight, comfortable tee. Crisp, detailed print and a relaxed fit that works from the track day to the street. For motorsport and BMW lovers. Sizes M / L / XL."},
+ {id:5,n:"Honda Civic 1996",t:"T-Shirt",p:1750,i:"civic-1996.jpg",d:"The classic 1996 Honda Civic, the street-tuner legend, on a soft, lightweight tee. Clean retro print and an easy everyday fit. A true tribute for JDM lovers and old-school car culture. Sizes M / L / XL."}
 ];
 const sel={}; let cart=[]; try{cart=JSON.parse(localStorage.getItem("oh")||"[]")}catch(e){}
 const fmt=n=>"Rs. "+n.toLocaleString("en-PK");
 function render(f="all"){
  grid.innerHTML=P.filter(x=>f=="all"||x.t==f).map(x=>`<div class="card">${x.sold?`<div class="badge">🔥 ${x.sold} Sold</div>`:""}<img src="images/${x.i}" alt="${x.n}" loading="lazy">
- <div class="info"><div class="cat">${x.t}</div><h3>${x.n}</h3>${x.d?`<p class="desc">${x.d}</p>`:""}<div class="price">${fmt(x.p)}</div>
+ <div class="info"><div class="cat">${x.t}</div><h3>${x.n}</h3>${x.d?`<p class="desc">${x.d}</p>`:""}${x.r?`<div class="rate"><span class="stars" style="--v:${x.r}"></span><b>${x.r}</b>${x.sold?` · ${x.sold} sold`:""}</div>`:""}<div class="price">${fmt(x.p)}</div>
  <div class="sizes">${SIZES.map(s=>`<button class="${sel[x.id]==s?'on':''}" onclick="pick(${x.id},'${s}')">${s=="Medium"?"M":s=="Large"?"L":"XL"}</button>`).join("")}</div>
  <button class="btn" onclick="add(${x.id})">Add to Cart</button></div></div>`).join("");
 }
